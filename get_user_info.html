@@ -1,20 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get user info</title>
+
     <script>
-        var name = prompt("What is your name?");
-        var age = prompt("How old are u?");
-        var gender = prompt("What is your gender?");
-        alert("Your name is " + name + "\n Your age is " + age + "\n Your gender is " + gender);
+        function checkForm(form) {
+
+            var len = 0;
+
+            for (var i = 0; i < form.length; i++) {
+
+                len += form.elements[i].value.length;
+
+            }
+            alert(len);
+
+            if (len <= 10)
+
+                return true;
+
+            else
+
+                return false;
+
+        }
     </script>
+
 </head>
 
 <body>
+
+
+
+
+
+    <form action="test.php" onSubmit="return checkForm(this)">
+
+        <input name="one" type="text" value="one"></br>
+
+        <input name="two" type="text" value="two"></br>
+
+        <input name="three" type="text" value="three"></br>
+
+
+
+        <input type="submit">
+
+    </form>
 
 </body>
 
